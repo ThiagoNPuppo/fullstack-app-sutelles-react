@@ -6,6 +6,12 @@ async function listaProdutos() {
     return response.data;
 }
 
+async function inserirProduto(produto) {
+    const response = await axios.post(BASE_URL, produto)
+    return response.data;
+}
+
 export default {
-    listaProdutos
+    listaProdutos,
+    inserirProduto
 }
