@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Menu() {
 
@@ -16,17 +17,17 @@ export default function Menu() {
                 <a href="#" className="w3-bar-item w3-button">
                     <i className="fa fa-home w3-xlarge"></i>
                 </a>
-                <a href="#" className="w3-bar-item w3-button w3-hide-small">Menu 1</a>
-                <a href="#" className="w3-bar-item w3-button w3-hide-small">Menu 2</a>
-                <a href="#" className="w3-bar-item w3-button w3-hide-small">Menu 3</a>
+                <Link to="/" className="w3-bar-item w3-button w3-hide-small">Home</Link>
+                <Link to="/lista" className="w3-bar-item w3-button w3-hide-small">Produtos</Link>
+                <Link to="/cadastro" className="w3-bar-item w3-button w3-hide-small">Cadastro</Link>
                 <a href="#" className="w3-bar-item w3-button w3-right">
                     <i className="fa fa-search w3-xlarge"></i>
                 </a>
             </nav>
             <nav id="menu-mobile" className={classMenuMobile + ((selecionado) ?" w3-show" :"")}>
-                <a href="#" className="w3-bar-item w3-button">Menu 1</a>
-                <a href="#" className="w3-bar-item w3-button">Menu 2</a>
-                <a href="#" className="w3-bar-item w3-button">Menu 3</a>
+                <Link to="/" className="w3-bar-item w3-button">Home</Link>
+                <Link to="/lista" className="w3-bar-item w3-button">Produtos</Link>
+                <Link to="/cadastro" className="w3-bar-item w3-button">Cadastro</Link>
             </nav>
         </div>
     )

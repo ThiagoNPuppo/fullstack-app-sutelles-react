@@ -24,6 +24,11 @@
       "id": "2c09",
       "nome": "Produto 5",
       "preco": "540"
+    },
+    {
+      "id": "cd5e",
+      "nome": "Produto6",
+      "preco": "440"
     }
   ]
 }

@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom"
 import Carroussel from "./components/Carroussel"
 import FormProdutos from "./components/FormProdutos"
 import ListCardProdutos from "./components/ListCardProdutos"
@@ -15,7 +16,8 @@ function App() {
         <Carroussel />
         <div className="w3-row w3-container w3-margin-top">
           {/* <ListCardProdutos></ListCardProdutos> */}
-          <FormProdutos></FormProdutos>
+          {/* <FormProdutos></FormProdutos> */}
+          <Outlet></Outlet>
         </div>
       </main>
 
