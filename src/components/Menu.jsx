@@ -18,15 +18,19 @@ export default function Menu() {
                     <i className="fa fa-home w3-xlarge"></i>
                 </a>
                 <Link to="/" className="w3-bar-item w3-button w3-hide-small">Home</Link>
-                <Link to="/lista" className="w3-bar-item w3-button w3-hide-small">Produtos</Link>
-                <Link to="/cadastro" className="w3-bar-item w3-button w3-hide-small">Cadastro</Link>
+                <Link to="/produtos" className="w3-bar-item w3-button w3-hide-small">Produtos</Link>
+                <Link to="/clientes" className="w3-bar-item w3-button w3-hide-small">Clientes</Link>
+                <Link to="/pedidos" className="w3-bar-item w3-button w3-hide-small">Pedidos</Link>
+                <Link to="/cadastro" className="w3-bar-item w3-button">Cadastro</Link>
                 <a href="#" className="w3-bar-item w3-button w3-right">
                     <i className="fa fa-search w3-xlarge"></i>
                 </a>
             </nav>
             <nav id="menu-mobile" className={classMenuMobile + ((selecionado) ?" w3-show" :"")}>
                 <Link to="/" className="w3-bar-item w3-button">Home</Link>
-                <Link to="/lista" className="w3-bar-item w3-button">Produtos</Link>
+                <Link to="/produtos" className="w3-bar-item w3-button">Produtos</Link>
+                <Link to="/clientes" className="w3-bar-item w3-button">Clientes</Link>
+                <Link to="/pedidos" className="w3-bar-item w3-button">Pedidos</Link>
                 <Link to="/cadastro" className="w3-bar-item w3-button">Cadastro</Link>
             </nav>
         </div>
