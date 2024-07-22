@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function Carroussel() {
     const [slideIndex, setSlideIndex] = useState(0);
-    const images = ["sutelles-horiz.jpg", "sutelles-horiz1.jpg"];
+    const images = ["su1.jpg", "su2.jpg"];
 
     const plusDiv = (n) => {
         let index = slideIndex + n;

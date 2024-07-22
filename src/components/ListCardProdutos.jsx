@@ -13,15 +13,11 @@ export default function ListCardProdutos() {
     }, [])
 
     return (
-        <div>
-        <h1>Lista de Produtos</h1>
         <ul>
         {listaProdutos.map(prod => 
             <li key={prod.id}><CardProduto produto={prod} /> 
             </li>
         )}
         </ul>    
-        </div>
-    
     )
 }
