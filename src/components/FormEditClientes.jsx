@@ -21,10 +21,10 @@ export default function FormEditClientes() {
                     setTelefone(cliente.data.telefone);
                     setEndereco(cliente.data.endereco);
                 })
-                .catch(err => {
-                    console.error("Erro ao buscar cliente:", err);
-                    alert("Erro ao buscar cliente.");
-                });
+                // .catch(err => {
+                //     console.error("Erro ao buscar cliente:", err);
+                //     alert("Erro ao buscar cliente.");
+                // });
         }, [id])
     
         const editarCliente = (event) => {

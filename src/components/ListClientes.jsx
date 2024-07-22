@@ -11,10 +11,10 @@ export default function ListClientes() {
         console.log("Clientes fetched:", clientes.data);
         setListaClientes(clientes.data);
       })
-      .catch(err => {
-        console.error("Erro ao listar clientes:", err);
-        alert("Erro ao listar clientes.");
-      });
+      // .catch(err => {
+      //   console.error("Erro ao listar clientes:", err);
+      //   alert("Erro ao listar clientes.");
+      // });
   }, []);
 
   return (

@@ -11,10 +11,10 @@ export default function ListPedidos() {
         console.log("Pedidos fetched:", pedidos.data);
         setListaPedidos(pedidos.data);
       })
-        .catch(err => {
-            console.error("Erro ao listar pedidos:", err);
-            alert("Erro ao listar pedidos.");
-        });
+        // .catch(err => {
+        //     console.error("Erro ao listar pedidos:", err);
+        //     alert("Erro ao listar pedidos.");
+        // });
     }, []);
 
     return (

@@ -16,7 +16,9 @@ export default function FormProdutos(){
             })            
     } 
     return (
+        
         <form onSubmit= {cadastrarProduto}>
+            <p>Lista de Produtos</p>
             <label>Nome:</label>
             <input type="text" name="nome" value={nome} 
                 onChange={(ev) => setNome(ev.target.value)} />

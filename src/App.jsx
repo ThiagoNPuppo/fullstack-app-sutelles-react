@@ -6,11 +6,14 @@ function App() {
 
   return (
     <>
-      <Menu></Menu>
-      <main>        
+      <Menu />
+      <main>
+        <div className="w3-container w3-padding-16 w3-margin-top">
+          <h1> </h1>
+        </div>
         <Carroussel />
-        <div className="w3-row w3-container w3-margin-top">
-          <Outlet></Outlet>
+        <div>
+          <Outlet />
         </div>
       </main>
 

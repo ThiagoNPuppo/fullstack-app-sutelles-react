@@ -23,7 +23,7 @@ export default function FormClientes() {
                 })
                 .catch(error => {
                     console.log("Erro ao cadastrar cliente", error);
-                    alert("Erro ao cadastrar cliente");
+                    //alert("Erro ao cadastrar cliente");
                 });
         }
         return (

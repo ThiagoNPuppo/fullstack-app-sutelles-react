@@ -16,10 +16,10 @@ export default function FormEditPedidos() {
         setProdutoId(pedido.produtoId);
         setQuantidade(pedido.quantidade);
       })
-      .catch(err => {
-        console.error("Erro ao carregar pedido:", err);
-        alert("Erro ao carregar pedido.");
-      });
+      // .catch(err => {
+      //   console.error("Erro ao carregar pedido:", err);
+      //   alert("Erro ao carregar pedido.");
+      // });
   }, [id]);
 
   const editarPedido = (event) => {
