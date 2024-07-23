@@ -23,13 +23,16 @@ export default function Router() {
         <Route path='pedidos/novo' element={<FormPedidos />} />
         <Route path='pedidos/edit/:id' element={<FormEditPedidos />} />
         <Route path='cadastro' element={<Cadastro />}>
-          <Route path='produtos' element={<FormProdutos />} />
-            <Route path='produtos/novo' element={<FormProdutos />} />
-            <Route path='produtos/edit/:id' element={<FormEditProdutos />} />
-          <Route path='clientes' element={<FormClientes />} />
-            <Route path='clientes/novo' element={<FormClientes />} />
-            <Route path='clientes/edit/:id' element={<FormEditClientes />} />
-        
+          <Route path='produtos'>
+            <Route index element={<FormProdutos />} />
+            <Route path='novo' element={<FormProdutos />} />
+            <Route path='edit/:id' element={<FormEditProdutos />} />
+          </Route>
+          <Route path='clientes'>
+            <Route index element={<FormClientes />} />
+            <Route path='novo' element={<FormClientes />} />
+            <Route path='edit/:id' element={<FormEditClientes />} />
+          </Route>
         </Route>
       </Route>
     </Routes>

@@ -5,10 +5,10 @@ export default function ListPedidos() {
   const [listaPedidos, setListaPedidos] = useState([]);
 
   useEffect(() => {
-    console.log("Fetching pedidos...");
+    console.log("Buscando pedidos...");
     pedidoService.listaPedidos()
       .then(pedidos => {
-        console.log("Pedidos fetched:", pedidos.data);
+        console.log("Pedidos encontrados:", pedidos.data);
         setListaPedidos(pedidos.data);
       })
         // .catch(err => {

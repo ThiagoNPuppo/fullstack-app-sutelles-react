@@ -5,10 +5,10 @@ export default function ListClientes() {
   const [listaClientes, setListaClientes] = useState([]);
 
   useEffect(() => {
-    console.log("Fetching clientes...");
+    console.log("Buscando clientes...");
     clienteService.listaClientes()
       .then(clientes => {
-        console.log("Clientes fetched:", clientes.data);
+        console.log("Clientes encontrados:", clientes.data);
         setListaClientes(clientes.data);
       })
       // .catch(err => {
@@ -18,15 +18,16 @@ export default function ListClientes() {
   }, []);
 
   return (
-    <div>
-      <h1>Lista de Clientes</h1>
-      <ul>
-        {listaClientes.map(cliente => (
-          <li key={cliente.id}>
-            {cliente.nome} - {cliente.cpf} - {cliente.email} - {cliente.telefone}
-          </li>
+    <div className="container mt-5">
+      <h1 className="mb-4">Lista de Clientes</h1>
+      {listaClientes.map(cliente => (
+          <div key={cliente.id} className="list-group-item">
+            <h5 className="mb-1">{cliente.nome}</h5>
+            <p>{cliente.cpf}</p>
+            <p>{cliente.email}</p>
+            <p>{cliente.telefone}</p>
+          </div>
         ))}
-      </ul>
     </div>
   );
 }
