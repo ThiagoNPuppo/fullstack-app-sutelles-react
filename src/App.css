@@ -1,9 +1,18 @@
+body {
+  background-color: #e0e0f8;  /* Tom de roxo claro */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
 .background-custom {
-  background-color: #22ebb9; 
+  background-color: #e0e0f8;  /* Tom de roxo claro */
+  min-height: 100vh;
 }
 
 .w3-margin-top {
-  margin-top: 0px !important;
+  margin-top: -20px !important;
 }
 
 .container {
@@ -13,23 +22,36 @@
 }
 
 .list-group-item {
-  background-color: #ffffff;
+  background-color: #ffffff; /* Fundo branco para contraste */
   border: 1px solid #dddddd;
   margin-bottom: 10px;
   padding: 20px;
   border-radius: 10px;
   display: flex;
-  align-items: center;
-  width: 48%;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: background-color 0.3s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
 }
 
 .list-group-item h5 {
   margin: 0;
   font-size: 1.25rem;
+  padding: 2%;
+}
+
+.list-group-item:nth-child(odd) {
+  background-color: #f9f9f9; /* Fundo cinza claro para contraste */
 }
 
 .list-group-item p {
   margin: 5px 0;
+}
+
+.list-group-item h5 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #4b0082; 
 }
 
 .list-group-item small {
@@ -75,6 +97,16 @@
   justify-content: center;
   align-items: center;  
 }
+
+.dadosLista {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  padding: 0px 18px;
+}
+
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

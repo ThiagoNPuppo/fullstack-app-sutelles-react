@@ -23,11 +23,12 @@ export default function ListPedidos() {
       {listaPedidos.map(pedido => (
         <div key={pedido.id} className="list-group-item">
           <h5 className="mb-1">PEDIDO Nº: {pedido.id}</h5>
-          <p>NOME: {pedido.cliente?.nome}</p>
-          <p>DATA: {new Date(pedido.data_ped).toLocaleDateString()}</p>
-          <p>PRODUTOS: {pedido.produtos.map(produto => produto.nome).join(', ')}</p>
-          <p>VALOR: {pedido.valor}</p>
-          <br/><br/><br/>
+          <div className="dadosLista">
+            <p>NOME: {pedido.cliente?.nome}</p>
+            <p>DATA: {new Date(pedido.data_ped).toLocaleDateString()}</p>
+            <p>PRODUTOS: {pedido.produtos.map(produto => produto.nome).join(', ')}</p>
+            <p>VALOR: {pedido.valor}</p>
+          </div>     
         </div>
       ))}
     </div>

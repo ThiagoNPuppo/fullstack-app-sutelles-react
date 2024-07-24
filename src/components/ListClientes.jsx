@@ -20,15 +20,20 @@ export default function ListClientes() {
   return (
     <div className="container mt-5">
       <h1 className="mb-4">Lista de Clientes</h1>
-      {listaClientes.map(cliente => (
+      {listaClientes.length > 0 ? (
+        listaClientes.map(cliente => (
           <div key={cliente.id} className="list-group-item">
             <h5 className="mb-1">{cliente.id} - {cliente.nome}</h5>
+            <div className="dadosLista">
             <p>CPF: {cliente.cpf}</p>
             <p>Email: {cliente.email}</p>
             <p>Telefone: {cliente.telefone}</p>
-            <br></br>
+            </div>            
           </div>
-        ))}
+        ))
+      ) : (
+        <p>Nenhum cliente encontrado.</p>
+      )}
     </div>
   );
 }
