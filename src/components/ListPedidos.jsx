@@ -7,26 +7,29 @@ export default function ListPedidos() {
   useEffect(() => {
     console.log("Buscando pedidos...");
     pedidoService.listaPedidos()
-      .then(pedidos => {
-        console.log("Pedidos encontrados:", pedidos.data);
-        setListaPedidos(pedidos.data);
+      .then(response => {
+        console.log("Pedidos encontrados:", response.data);
+        setListaPedidos(response.data);
       })
-        // .catch(err => {
-        //     console.error("Erro ao listar pedidos:", err);
-        //     alert("Erro ao listar pedidos.");
-        // });
-    }, []);
+      // .catch(err => {
+      //   console.error("Erro ao listar pedidos:", err);
+      //   alert("Erro ao listar pedidos.");
+      // });
+  }, []);
 
-    return (
-        <div>
-            <h1>Lista de Pedidos</h1>
-            <ul>
-                {listaPedidos.map(pedido => (
-                    <li key={pedido.id}>
-                        {pedido.cliente.nome} - {pedido.produto.nome} - {pedido.quantidade}
-                    </li>
-                ))}
-            </ul>
+  return (
+    <div className="container mt-5">
+      <h1 className="mb-4">Lista de Pedidos</h1>
+      {listaPedidos.map(pedido => (
+        <div key={pedido.id} className="list-group-item">
+          <h5 className="mb-1">PEDIDO Nº: {pedido.id}</h5>
+          <p>NOME: {pedido.cliente?.nome}</p>
+          <p>DATA: {new Date(pedido.data_ped).toLocaleDateString()}</p>
+          <p>PRODUTOS: {pedido.produtos.map(produto => produto.nome).join(', ')}</p>
+          <p>VALOR: {pedido.valor}</p>
+          <br/><br/><br/>
         </div>
-    );
+      ))}
+    </div>
+  );
 }

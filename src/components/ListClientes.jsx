@@ -22,10 +22,11 @@ export default function ListClientes() {
       <h1 className="mb-4">Lista de Clientes</h1>
       {listaClientes.map(cliente => (
           <div key={cliente.id} className="list-group-item">
-            <h5 className="mb-1">{cliente.nome}</h5>
-            <p>{cliente.cpf}</p>
-            <p>{cliente.email}</p>
-            <p>{cliente.telefone}</p>
+            <h5 className="mb-1">{cliente.id} - {cliente.nome}</h5>
+            <p>CPF: {cliente.cpf}</p>
+            <p>Email: {cliente.email}</p>
+            <p>Telefone: {cliente.telefone}</p>
+            <br></br>
           </div>
         ))}
     </div>

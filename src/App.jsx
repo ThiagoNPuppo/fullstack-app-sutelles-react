@@ -1,13 +1,14 @@
 import { Outlet } from "react-router-dom"
 import Carroussel from "./components/Carroussel"
 import Menu from "./components/Menu"
+import './App.css'
 
 function App() {
 
   return (
     <>
       <Menu />
-      <main>
+      <main className="background-custom">
         <div className="w3-container w3-padding-16 w3-margin-top">
           <h1> </h1>
         </div>

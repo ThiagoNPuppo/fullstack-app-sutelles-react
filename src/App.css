@@ -1,15 +1,26 @@
+.background-custom {
+  background-color: #22ebb9; 
+}
+
+.w3-margin-top {
+  margin-top: 0px !important;
+}
+
 .container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: auto;
+  padding: 20px;
 }
 
 .list-group-item {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: 10px;
   display: flex;
-  flex-direction: column;
-  align-items: start;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  margin-bottom: 0.5rem;
+  align-items: center;
+  width: 48%;
 }
 
 .list-group-item h5 {
@@ -18,18 +29,32 @@
 }
 
 .list-group-item p {
-  margin: 0.5rem 0;
+  margin: 5px 0;
 }
 
 .list-group-item small {
   color: #666;
 }
 
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.list-group-item img {
+  max-width: 150px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.list-group-item .price {
+  font-weight: bold;
+  color: #0275d8;
+}
+
+.list-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.row .list-group-item {
+  margin-bottom: 20px;
 }
 
 .logo {
@@ -45,6 +70,11 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.msg-fim {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
