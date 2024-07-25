@@ -7,6 +7,7 @@ export default function FormClientes() {
   const [email, setEmail] = useState("");
   const [telefone, setTelefone] = useState("");
   const [endereco, setEndereco] = useState("");
+  const [errorMessage, setErrorMessage] = useState('');
 
   const cadastrarCliente = (event) => {
     event.preventDefault();
@@ -26,6 +27,15 @@ export default function FormClientes() {
         setEmail("");
         setTelefone("");
         setEndereco("");
+        setErrorMessage(''); // Limpa a mensagem de erro
+        alert('Cliente cadastrado com sucesso!');
+      }) 
+      .catch((error) => {
+        if (error.response) {
+          setErrorMessage(error.response.data.message);
+        } else {
+          setErrorMessage('Erro ao cadatrar o cliente');
+        }
       });
   };
 
@@ -34,6 +44,7 @@ export default function FormClientes() {
       <form onSubmit={cadastrarCliente}>
         <h1>Cadastro de Clientes</h1>
         <h3>Novo Cliente</h3>
+        {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
         <div className="form-group">
           <label htmlFor="nome">Nome:</label>
           <input
