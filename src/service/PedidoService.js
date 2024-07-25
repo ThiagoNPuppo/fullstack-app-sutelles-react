@@ -5,7 +5,7 @@ const api = axios.create({
 });
 
 const pedidoService = {
-  listaPedidos: () => api.get('/').then(res => res.data),
+  listaPedidos: () => api.get('/?populate=*').then(res => res.data),
   getPedido: (id) => api.get(`/${id}`).then(res => res.data),
   inserirPedido: (pedido) => api.post('/', { data: pedido }).then(res => res.data),
   updatePedido: (id, pedido) => api.put(`/${id}`, { data: pedido }).then(res => res.data),
