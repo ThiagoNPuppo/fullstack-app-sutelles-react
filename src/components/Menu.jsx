@@ -149,7 +149,7 @@ export default function Menu() {
               <Link className="nav-link" to="/pedidos">Pedidos</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/pedidos/novo">Novo Pedido</Link>
+              <Link className="nav-link" to="/pedidos/novo">Venda</Link>
             </li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onClick={toggleSubmenu}>

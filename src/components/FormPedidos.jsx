@@ -3,7 +3,6 @@ import clienteService from "../service/ClienteService";
 import produtoService from "../service/ProdutoService";
 import pedidoService from "../service/PedidoService";
 
-
 export default function FormPedidos() {
   const [clientes, setClientes] = useState([]);
   const [produtos, setProdutos] = useState([]);

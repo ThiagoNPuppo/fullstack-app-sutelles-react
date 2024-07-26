@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import clienteService from "../service/ClienteService";
 
 export default function ListClientes() {
   const [listaClientes, setListaClientes] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("Buscando clientes...");
     clienteService.listaClientes()
       .then(clientes => {
-        console.log("Clientes encontrados:", clientes.data);
         setListaClientes(clientes.data);
       })
       // .catch(err => {
@@ -16,6 +16,31 @@ export default function ListClientes() {
       //   alert("Erro ao listar clientes.");
       // });
   }, []);
+
+  const editarCliente = (id) => {
+    navigate(`/cadastro/clientes/edit/${id}`);
+    // clienteService.editarCliente(id)
+    //   .then(() => {
+    //     setListaClientes(listaClientes.filter(cliente => cliente.id !== id));
+    //   })
+      // .catch(err => {
+      //   console.error("Erro ao editar cliente:", err);
+      //   alert("Erro ao editar cliente.");
+      // });
+    
+  };
+
+  const removerCliente = (id) => {
+    clienteService.deleteCliente(id)
+      .then(() => {
+        setListaClientes(listaClientes.filter(cliente => cliente.id !== id));
+        alert("Cliente removido com sucesso!");
+      })
+      .catch(err => {
+        console.error("Erro ao remover cliente:", err);
+        alert("Erro ao remover cliente.");
+      });
+  };
 
   return (
     <div className="container mt-5">
@@ -28,6 +53,10 @@ export default function ListClientes() {
             <p>CPF: {cliente.cpf}</p>
             <p>Email: {cliente.email}</p>
             <p>Telefone: {cliente.telefone}</p>
+            </div>
+            <div>
+              <button className="btn btn-primary me-2" onClick={() => editarCliente(cliente.id)}>Editar</button>
+              <button className="btn btn-danger" onClick={() => removerCliente(cliente.id)}>Remover</button>
             </div>            
           </div>
         ))

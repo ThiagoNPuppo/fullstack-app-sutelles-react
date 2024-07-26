@@ -13,7 +13,7 @@ export default function FormEditClientes() {
         const [endereco, setEndereco] = useState("");
     
         useEffect(() => {
-            clienteService.buscarCliente(id)
+            clienteService.getCliente(id)
                 .then(cliente => {
                     setNome(cliente.data.nome);
                     setCpf(cliente.data.cpf);
@@ -29,7 +29,7 @@ export default function FormEditClientes() {
     
         const editarCliente = (event) => {
             event.preventDefault();
-            clienteService.editarCliente(id, { nome, cpf, email, telefone })
+            clienteService.editarCliente(id, { nome, cpf, email, telefone, endereco })
                 .then(() => {
                     alert("Cliente editado com sucesso!");
                     navigate(-1);
@@ -64,7 +64,7 @@ export default function FormEditClientes() {
                 <label>Endereço:</label>
                 <input type="text" name="endereco" value={endereco}
                     onChange={(ev) => setEndereco(ev.target.value)} />
-                <input type="submit" value="Salvar" />
+                <input type="submit" value="Salvar"/>
                 <input type="button" value="Voltar" onClick={voltar} />
             </form>
         )
